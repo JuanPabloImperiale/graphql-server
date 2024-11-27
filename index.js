@@ -1,4 +1,5 @@
 import { gql, ApolloServer } from "apollo-server";
+import { v1 as uuid } from 'uuid'
 
 const persons = [
     {
@@ -52,6 +53,15 @@ const typeDefs = gql`
         findPerson(name: String!): Person
 
     }
+
+    type Mutation {
+        addPerson(
+            name: String!
+            phone: String
+            street: String!
+            city: String!
+        ): Person
+    }
 `
 
 const resolvers = {
@@ -62,6 +72,14 @@ const resolvers = {
             const {name}= args
             return persons.find(person=> person.name === name)
         }
+    },
+    Mutation:{
+        addPerson:(root, args)=>{
+            const person= {...args, id: uuid()}
+            persons.push(person)
+            return person
+        }
+
     },
     Person:{
         address : (root)=> {
