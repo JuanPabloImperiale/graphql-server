@@ -1,3 +1,5 @@
 run => node index.js
-
+or 
+server gql =   npx nodemon index.js
+server json =  npm run json-server
 
