@@ -2,40 +2,40 @@ import { gql, ApolloServer, UserInputError } from "apollo-server";
 import { v1 as uuid } from 'uuid'
 import  axios   from 'axios'
 
-// const persons = [
-//     {
-//         name : "Juan Pablo",
-//         phone : "08800245",
-//         street : "Puertas del sol norte 201",
-//         city : "Monterrey",
-//         id : " 123456789",
+const persons = [
+    {
+        name : "Juan Pablo",
+        phone : "08800245",
+        street : "Puertas del sol norte 201",
+        city : "Monterrey",
+        id : " 123456789",
 
-//     },
-//     {
-//         name : "Michelle Ramirez",
-//         phone : "684164321",
-//         street : "Calle 13 ",
-//         city : "San Nicalas",
-//         id : "987654321",
+    },
+    {
+        name : "Michelle Ramirez",
+        phone : "684164321",
+        street : "Calle 13 ",
+        city : "San Nicalas",
+        id : "987654321",
 
-//     },
-//     {
-//         name : "Guachin",
-//         phone : "996633225588",
-//         street : "Cucha123",
-//         city : "San Jeronimo",
-//         id : "885522114477",
+    },
+    {
+        name : "Guachin",
+        phone : "996633225588",
+        street : "Cucha123",
+        city : "San Jeronimo",
+        id : "885522114477",
 
-//     },
-//     {
-//         name : "Turrita",
-//         phone : "987456321",
-//         street : "Cucha321",
-//         city : "San Jeronimo",
-//         id : "996633114477",
+    },
+    {
+        name : "Turrita",
+        phone : "987456321",
+        street : "Cucha321",
+        city : "San Jeronimo",
+        id : "996633114477",
 
-//     },
-// ]
+    },
+]
 
 const typeDefs = gql` 
     enum YesNo {
